@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Users from './Users';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //https://react-bootstrap.github.io/getting-started/introduction/ bootstrap doc
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <Users users={this.state.users}/>
+          <p class="text-primary">.text-primary</p>
           <a
             className="App-link"
             href="https://reactjs.org"
