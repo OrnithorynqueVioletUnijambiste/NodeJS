@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Users from './Users';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom';
 
 class App extends React.Component {
 
@@ -40,7 +41,7 @@ class App extends React.Component {
                   <a class="nav-link" href="#">Description</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link disabled" href="#">Disabled</a>
+                  <Link to="/users">Users</Link>
                 </li>
               </ul>
             </div>
