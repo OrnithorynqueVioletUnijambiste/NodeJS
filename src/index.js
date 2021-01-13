@@ -10,9 +10,6 @@ import {
   Switch
 } from 'react-router-dom'
 
-
-
-
 const Root = () => {
   return (
       <Router>
@@ -30,7 +27,6 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-
 
 
 // If you want to start measuring performance in your app, pass a function

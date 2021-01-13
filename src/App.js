@@ -3,11 +3,11 @@ import logo from './logo.svg';
 import './App.css';
 import Users from './Users';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class App extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.state = {
@@ -15,30 +15,26 @@ class App extends React.Component {
     }
   }
 
-  componentWillMount(){
-    console.log("component will mount");
+  componentDidMount() {
     this.setState({
-      users: [...this.state.users, "Bob"]
-    });
+      data: this.props.location.data
+    })
+    console.log(this.props.location.data)
   }
 
-  render (){
+  render() {
     return (
       <div className="App">
-        <header>
-        </header>
         <body class="fullScreen">
-          <nav class="navbar navbar-dark bg-dark">
-            <a class="nav-item nav-link active">
-              <img src={logo} className="App-logo d-inline-block align-top" alt="logo" />Home
-            </a>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <img src={logo} className="App-logo d-inline-block align-top" alt="logo" />
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  <Link to="/">Accueil</Link>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Description</a>
+                  <Link to="/">Description</Link>
                 </li>
                 <li class="nav-item">
                   <Link to="/users">Users</Link>
@@ -46,24 +42,34 @@ class App extends React.Component {
               </ul>
             </div>
           </nav>
-          <div>
-            <h1 class="text-primary">Projet fin d'année</h1>
+          <div class="container">
+            <h1 class="text-primary py-4">Projet fin d'année</h1>
             <p>Bienvenue sur notre site explicatif de notre projet de fin d'année</p>
-            <Users users={this.state.users}/>
-            <a
+            <Users users={this.state.users} />
+            {/* <a
               className="App-link"
               href="https://reactjs.org"
               target="_blank"
               rel="noopener noreferrer"
             >
               Learn React
-            </a>
-            
+            </a> */}
+          </div>
+          <div class="py-4">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-body">
+                    ça marche pas haHA
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </body>
         <footer class="footer text-light">
           <div>
-            <h3>Create by:</h3>
+            <h3>Created by:</h3>
           </div>
         </footer>
       </div>
