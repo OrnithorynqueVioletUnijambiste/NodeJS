@@ -6,13 +6,18 @@ class Users extends React.Component{
     // eslint-disable-next-line no-useless-constructor
     constructor(props){
         super(props)
-        this.state={users: []}
+        this.state={
+            users: [],
+            projets: []
+        }
     }
 
     async componentDidMount(){
         const users = await fromUserAPI.getUsers()
+        const projets = await fromUserAPI.getProjets()
         this.setState({
-            users: users
+            users: users,
+            projets: projets
         })
     }
 
@@ -31,10 +36,16 @@ class Users extends React.Component{
                 <input type="text" name="email" value={this.state.email} onChange={(e) => this.handleChange(e)}/>
                 <ul>
                     {
-                        this.state.users.map((u,i) => {return <li key={i}>{u.name}</li>})
+                        this.state.users.map((u,i) => {return <li key={i}>{u.email}</li>})
                     }
                 </ul>
-                <Link to={{pathname: '/', data:this.state}}>Home</Link>
+                <ul>
+                    {
+                        this.state.projets.map((u,i) => {return <li key={i}>{u.nom_projet}</li>})
+
+                    }
+                </ul>
+                {/* <Link to={{pathname: '/', data:this.state}}>Home</Link> */}
             </div>
         );    
     }

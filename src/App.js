@@ -30,13 +30,13 @@ class App extends React.Component {
             <img src={logo} className="App-logo d-inline-block align-top" alt="logo" />
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
+                <li class="nav-item active navbar">
                   <Link to="/">Accueil</Link>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navbar">
                   <Link to="/">Description</Link>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navbar">
                   <Link to="/users">Users</Link>
                 </li>
               </ul>
