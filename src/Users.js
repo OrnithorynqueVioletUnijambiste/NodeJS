@@ -32,15 +32,19 @@ class Users extends React.Component {
         })
     }
 
-    async deleteProjet(pute) {
-        console.log(pute);
-        fromUserAPI.deleteProjet({
-            id: pute
+    async deleteProjet(grosId) {
+        console.log(grosId.id);
+        const projet = await fromUserAPI.deleteProjet({
+            _id: grosId.id
         })
         const projets = await fromUserAPI.getProjets()
         this.setState({
             projets: projets
         })
+        var x = document.getElementById("card");
+        if(x.style.visibility === "visible"){
+            x.style.visibility = "hidden";
+        }
     }
 
         
@@ -70,44 +74,48 @@ class Users extends React.Component {
     render() {
         return (
             <div className="App">
-                <div id="leftMainPage">
-                    <div id="inputContentLeft" class="inputContent">
-                        <label>Entrez un nom de projet</label>
-                        <input class="inputProjet" type="text" name="nom_projet" value={this.state.nom_projet} onChange={(e) => this.handleChange(e)} />
+                <div class="row">
+                    <div id="leftMainPage" class="row">
+                        <div id="inputContentLeft" class="col-md-6 col-12 inputContent">
+                            <label>Entrez un nom de projet</label>
+                            <div class="inputProjet">
+                                <textarea cols="40" rows="1" name="nom_projet" value={this.state.nom_projet} onChange={(e) => this.handleChange(e)} ></textarea>
+                            </div>
+                        </div>
+                        <div id="inputContentRight" class="col-md-6 col-12 inputContent">
+                            <label>Entrez une description du projet</label>
+                            <textarea cols="60" rows="5" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)}></textarea>
+                        </div>
+                        <div id="inputContentBottom" class="col-12">
+                            <button class="btn btn-success" onClick={() => this.postProjet()}>Ajouter phase Projet</button>
+                        </div> 
                     </div>
-                    <div id="inputContentRight" class="inputContent">
-                        <label>Entrez une description du projet</label>
-                        <input class="inputProjet" type="text" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)} />
+                    <div id="rightMainPage">
+                        {/* <ul>
+                            {
+                                this.state.users.map((u,i) => {return <li key={i}>{u.email}</li>})
+                            }
+                        </ul> */}
+                        <ul>
+                            {
+                                this.state.projets.map((u, i) => { 
+                                    return <li key={i}>
+                                        <button style={{border:'none', backgroundColor : 'transparent'}} onClick={() => this.popOnClick(u)}>{u.nom_projet}</button>
+                                    </li> 
+                                })
+                            }
+                        </ul>
+                        {/* <Link to={{pathname: '/', data:this.state}}>Home</Link> */}
                     </div>
-                    <div id="inputContentBottom">
-                        <button class="validateButton" onClick={() => this.postProjet()}>Ajouter phase Projet</button>
-                    </div> 
                 </div>
-                <div id="rightMainPage">
-                    {/* <ul>
-                        {
-                            this.state.users.map((u,i) => {return <li key={i}>{u.email}</li>})
-                        }
-                    </ul> */}
-                    <ul>
-                        {
-                            this.state.projets.map((u, i) => { 
-                                return <li key={i}>
-                                    <button style={{border:'none', backgroundColor : 'transparent'}} onClick={() => this.popOnClick(u)}>{u.nom_projet}</button>
-                                </li> 
-                            })
-                        }
-                    </ul>
-                    {/* <Link to={{pathname: '/', data:this.state}}>Home</Link> */}
-                </div>
-                <div class="py-4 container" id="bottomMainPage">
-                    <div class="justify-content-center">
-                        <div class="col-md-8">
+                <div class="row py-4" id="bottomMainPage">
+                    <div class="justify-content-center col-12" id="InfoContent">
+                        <div class="">
                             <div class="card" id="card" style={{visibility: 'hidden'}}>
                                 <div class="card-body">
-                                {this.state.selectedDescription}
-                                {this.state.selectedId}
-                                <button type="submit" class="btn btn-danger" onClick={() => this.deleteProjet({id: this.state.selectedId})}>Delete</button> 
+                                    {this.state.selectedDescription}
+                                    <br/>
+                                    <button type="submit" class="btn btn-danger" onClick={() => this.deleteProjet({id: this.state.selectedId})}>Supprimer le projet</button> 
                                 </div>
                             </div>
                         </div>
