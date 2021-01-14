@@ -11,3 +11,9 @@ export const getProjets = async () => {
     const projets = await response.json()
     return projets
 }
+
+export const postProjet = async (projet) => {
+    const response = await fetch('http://localhost:3001/projets', {method: 'POST', 
+    headers: {'Accept': 'application/json', 'Content-Type':'application/json'},
+    body: JSON.stringify(projet)})
+}

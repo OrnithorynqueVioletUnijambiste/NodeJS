@@ -13,6 +13,11 @@ router.get('/:nom_projet', async (req, res) => {
     res.json(projet)
 })
 
+router.get('/:id/:description', async (req, res) => {
+    let projet = await Projet.findOne({description: req.params.description, _id: req.params.id})
+    res.json(projet)
+})
+
 router.post('/', (req, res) => {
     let projet = new Projet(req.body)
     projet.save()
@@ -22,8 +27,6 @@ router.post('/', (req, res) => {
 router.delete('/:id', async (req, res) => {
     let projet = await Projet.findOneAndDelete({_id: req.params.id})
     res.json(projet)
-    
-
 })
 
 module.exports = router

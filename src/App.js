@@ -55,17 +55,6 @@ class App extends React.Component {
               Learn React
             </a> */}
           </div>
-          <div class="py-4">
-            <div class="row justify-content-center">
-              <div class="col-md-8">
-                <div class="card">
-                  <div class="card-body">
-                    ça marche pas haHA
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </body>
         <footer class="footer text-light">
           <div>
