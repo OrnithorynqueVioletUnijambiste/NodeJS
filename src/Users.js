@@ -87,7 +87,7 @@ class Users extends React.Component {
                             <textarea cols="60" rows="5" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)}></textarea>
                         </div>
                         <div id="inputContentBottom" class="col-12">
-                            <button class="btn btn-success" onClick={() => this.postProjet()}>Ajouter phase Projet</button>
+                            <button class="btn btn-success" onClick={() => this.postProjet()}>Ajouter le Projet</button>
                         </div> 
                     </div>
                     <div id="rightMainPage">
@@ -108,7 +108,7 @@ class Users extends React.Component {
                         {/* <Link to={{pathname: '/', data:this.state}}>Home</Link> */}
                     </div>
                 </div>
-                <div class="row py-4" id="bottomMainPage">
+                <div class="row col-12 py-4" id="bottomMainPage">
                     <div class="justify-content-center col-12" id="InfoContent">
                         <div class="">
                             <div class="card" id="card" style={{visibility: 'hidden'}}>

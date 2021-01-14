@@ -44,7 +44,7 @@ class App extends React.Component {
             </nav>
         </header>
         <body class="container-fluid fullScreen remove-all-margin">
-          <div id="row col-12 topMainPage">
+          <div id="row topMainPage">
             <h1 class="text-primary py-4">Projet de fin de semaine</h1>
             <p>Bienvenue sur notre site de gestion de projet</p>
           </div>
