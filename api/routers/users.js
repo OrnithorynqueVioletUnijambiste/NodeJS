@@ -27,8 +27,6 @@ router.post('/', (req, res) => {
 router.delete('/:id', async (req, res) => {
     let user = await User.findOneAndDelete({_id: req.params.id})
     res.json(user)
-    
-
 })
 
 module.exports = router

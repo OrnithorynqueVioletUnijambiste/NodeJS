@@ -13,6 +13,62 @@ header{
   width:100%;
   height: 5vh;
 }
+#topMainPage{
+  width:100%;
+  height: 5%;
+  text-align: center;
+}
+#renderUserContent{
+  margin-top:5%;
+  width:100%;
+  height: 80%;
+}
+
+#leftMainPage{
+  float:left;
+  width:50%;
+  height:40%;
+  
+}
+#rightMainPage{
+  float:left;
+  width:50%;
+  height:40%;
+  overflow-y:scroll;
+}
+#bottomMainPage{
+  margin-top: 7%;
+  float:left;
+  width:100%;
+  height:55%;
+  
+}
+
+.inputContent{
+  float: left;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+}
+
+#inputContentBottom{
+  text-align: center;
+  margin-top: 10%;
+}
+
+.inputProjet{
+  width: 90%;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 10px; 
+}
+
+.validateButton{
+  margin-top: 1%;
+  background-color: green;
+  border: 2px solid black;
+  border-radius: 15px;
+}
 
 .App-logo {
   height: 5vmin;

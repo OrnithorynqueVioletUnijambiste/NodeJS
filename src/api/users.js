@@ -17,3 +17,11 @@ export const postProjet = async (projet) => {
     headers: {'Accept': 'application/json', 'Content-Type':'application/json'},
     body: JSON.stringify(projet)})
 }
+
+export const deleteProjet = (projet) => {
+    console.log("Delete en cours ");
+    const response = fetch('http://localhost:3001/projets/'+projet.id, {method: 'DELETE', 
+    headers: {'Accept': 'application/json', 'Content-Type':'application/json'},
+    body: JSON.stringify(projet)})
+    console.log(projet.id);
+}
