@@ -11,38 +11,34 @@ header{
 .footer{
   background-color: #282c34;
   width:100%;
-  height: 5vh;
+  height: 47px;
 }
 
+li{
+  display: flow-root;
+}
+
+.ContentCore{
+  height: 50vh;
+}
 #topMainPage{
   width:100%;
   height: 5%;
   text-align: center;
 }
 #renderUserContent{
-  margin-top:5%;
   width:100%;
-  height: 80%;
+  height: 75%;
 }
 
-#leftMainPage{
-  float:left;
-  width:50%;
-  height:300px;
-  
-}
-#rightMainPage{
-  float:left;
-  width:50%;
-  height:300px;
+
+#projetList{
+  height: 200px;
   overflow-y:scroll;
 }
-#bottomMainPage{
-  margin-top: 7%;
-  float:left;
-  width:100vw;
-  height:55%;
-  
+#projetDescription{
+  height: 300px;
+  overflow-y:scroll;
 }
 
 .inputContent{
@@ -51,7 +47,6 @@ header{
 
 #inputContentBottom{
   text-align: center;
-  margin-top: 20%;
 }
 
 textarea{
@@ -74,18 +69,6 @@ textarea{
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {

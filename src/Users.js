@@ -75,23 +75,24 @@ class Users extends React.Component {
         return (
             <div className="App">
                 <div class="row">
-                    <div id="leftMainPage" class="row">
-                        <div id="inputContentLeft" class="col-md-6 col-12 inputContent">
+                    <div class="col-md-6 row ContentCore">
+                        <div class="col-12 inputContent ">
                             <label>Entrez un nom de projet</label>
                             <div class="inputProjet">
                                 <textarea cols="40" rows="1" name="nom_projet" value={this.state.nom_projet} onChange={(e) => this.handleChange(e)} ></textarea>
                             </div>
                         </div>
-                        <div id="inputContentRight" class="col-md-6 col-12 inputContent">
+                        <div class="col-12 inputContent ">
                             <label>Entrez une description du projet</label>
-                            <textarea cols="60" rows="5" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)}></textarea>
+                            <textarea cols="60" rows="10" name="description" value={this.state.description} onChange={(e) => this.handleChange(e)}></textarea>
                         </div>
-                        <div id="inputContentBottom" class="col-12">
+                        <div id="inputContentBottom" class="col-12 ">
                             <button class="btn btn-success" onClick={() => this.postProjet()}>Ajouter le Projet</button>
                         </div> 
                     </div>
-                    <div id="rightMainPage">
-                        {/* <ul>
+                    <div id="rightMainPage" class="col-md-6 ContentCore">
+                        <div class="row col-12" id="projetList">
+                            {/* <ul>
                             {
                                 this.state.users.map((u,i) => {return <li key={i}>{u.email}</li>})
                             }
@@ -106,16 +107,17 @@ class Users extends React.Component {
                             }
                         </ul>
                         {/* <Link to={{pathname: '/', data:this.state}}>Home</Link> */}
-                    </div>
-                </div>
-                <div class="row col-12 py-4" id="bottomMainPage">
-                    <div class="justify-content-center col-12" id="InfoContent">
-                        <div class="">
-                            <div class="card" id="card" style={{visibility: 'hidden'}}>
-                                <div class="card-body">
-                                    {this.state.selectedDescription}
-                                    <br/>
-                                    <button type="submit" class="btn btn-danger" onClick={() => this.deleteProjet({id: this.state.selectedId})}>Supprimer le projet</button> 
+                        </div>
+                        <div class="row col-12 py-4">
+                            <div class="justify-content-center col-12" id="InfoContent">
+                                <div class="">
+                                    <div class="card" id="card" style={{visibility: 'hidden'}}>
+                                        <div class="card-body" id="projetDescription">
+                                            {this.state.selectedDescription}
+                                            <br/>
+                                            <button type="submit" class="btn btn-danger" onClick={() => this.deleteProjet({id: this.state.selectedId})}>Supprimer le projet</button> 
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
