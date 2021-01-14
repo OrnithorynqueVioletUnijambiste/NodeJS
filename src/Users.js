@@ -92,6 +92,7 @@ class Users extends React.Component {
                     </div>
                     <div id="rightMainPage" class="col-md-6 ContentCore">
                         <div class="row col-12" id="projetList">
+                            <p class="col-12">Veuillez choisir un projet à afficher</p>
                             {/* <ul>
                             {
                                 this.state.users.map((u,i) => {return <li key={i}>{u.email}</li>})
